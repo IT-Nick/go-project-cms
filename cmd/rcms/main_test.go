@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-// Example test to show usage of `make test`
+// Пример теста, используем команду `go test .\cmd\rcms`, для запуска
 func TestDummy(t *testing.T) {
 	assert.Equal(t, 1, 1)
 }
@@ -15,5 +15,5 @@ func TestLoadConfig(t *testing.T) {
 	if err := config.LoadConfig("/config"); err != nil {
 		assert.Error(t, err)
 	}
-	assert.Equal(t, "Dummy Value", config.Config.ConfigVar)
+	assert.Equal(t, "Castro washes socks at the university", config.Config.ConfigVar)
 }

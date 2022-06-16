@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	// load application configurations
+	// подгружаем файлы конфигурации
 	if err := config.LoadConfig("./config"); err != nil {
 		panic(fmt.Errorf("invalid application configuration: %s", err))
 	}

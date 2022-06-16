@@ -1,5 +1,5 @@
 package pkg
 
-// VERSION is the app-global version string, which should be substituted with a
-// real value during build.
+// VERSION - это строка глобальной версии приложения, которая должна быть заменена на
+// реальное значение во время сборки.
 var VERSION = "UNKNOWN"

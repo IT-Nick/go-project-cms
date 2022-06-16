@@ -5,15 +5,15 @@ import (
 	"github.com/spf13/viper"
 )
 
-// Config is global object that holds all application level variables.
+// Config это глобальный объект, который содержит все переменные уровня приложения.
 var Config appConfig
 
 type appConfig struct {
-	// Example Variable
+	// Пример переменной для теста конфига
 	ConfigVar string
 }
 
-// LoadConfig loads config from files
+// LoadConfig подгружает конфигурацию из файлов
 func LoadConfig(configPaths ...string) error {
 	v := viper.New()
 	v.SetConfigName("example")
