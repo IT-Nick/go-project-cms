@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-// Пример теста, используем команду `go test .\cmd\rcms`, для запуска
+// Пример теста, используем команду `make test` (прям тут, в любом свободном поле), чтобы создать тест
 func TestDummy(t *testing.T) {
 	assert.Equal(t, 1, 1)
 }
