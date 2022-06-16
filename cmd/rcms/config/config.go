@@ -16,7 +16,7 @@ type appConfig struct {
 // LoadConfig подгружает конфигурацию из файлов
 func LoadConfig(configPaths ...string) error {
 	v := viper.New()
-	v.SetConfigName("example")
+	v.SetConfigName("example1")
 	v.SetConfigType("yaml")
 	v.SetEnvPrefix("rcms")
 	v.AutomaticEnv()
