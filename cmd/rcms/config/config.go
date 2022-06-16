@@ -5,11 +5,11 @@ import (
 	"github.com/spf13/viper"
 )
 
-// Config это глобальный объект, который содержит все переменные уровня приложения.
+// Config это глобальный объект, который содержит все переменные из структуры appConfig.
 var Config appConfig
 
 type appConfig struct {
-	// Пример переменной для теста конфига
+	// Пример переменной, загружаемой в функции LoadConfig
 	ConfigVar string
 }
 
