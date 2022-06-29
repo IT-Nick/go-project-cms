@@ -1,6 +1,7 @@
 package user
 
 import (
+	"github.com/IT-Nick/go-project-cms/cmd/rcms/frontend"
 	"github.com/IT-Nick/go-project-cms/cmd/rcms/handlers"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
@@ -35,7 +36,10 @@ func (h *handler) GetUsersList(w http.ResponseWriter, r *http.Request, params ht
 
 func (h *handler) CreateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	w.WriteHeader(201)
-	w.Write([]byte("this is create user"))
+	if r.Method != http.MethodPost {
+		w.Write(LoginForm)
+		return
+	}
 }
 
 func (h *handler) GetUserByUUID(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
