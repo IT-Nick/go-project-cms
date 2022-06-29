@@ -3,17 +3,13 @@ package main
 import (
 	"fmt"
 	"github.com/IT-Nick/go-project-cms/cmd/rcms/config"
+	"github.com/IT-Nick/go-project-cms/cmd/rcms/user"
 	"github.com/julienschmidt/httprouter"
 	"log"
 	"net"
 	"net/http"
 	"time"
 )
-
-func IndexHandler(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	name := params.ByName("name")
-	w.Write([]byte(fmt.Sprintf("Hellp %s", name)))
-}
 
 func main() {
 	// подгружаем файлы конфигурации
@@ -24,8 +20,14 @@ func main() {
 	fmt.Println(config.Config.ConfigVar)
 
 	router := httprouter.New()
-	router.GET("/:name", IndexHandler)
 
+	handler := user.NewHandler()
+	handler.Register(router)
+
+	start(router)
+}
+
+func start(router *httprouter.Router) {
 	listener, err := net.Listen("tcp", ":1234")
 	if err != nil {
 		panic(err)
