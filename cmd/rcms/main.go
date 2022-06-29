@@ -44,5 +44,6 @@ func start(router *httprouter.Router) {
 		ReadTimeout:  15 * time.Second,
 	}
 
+	log.Println("server is listening port 0.0.0.0:1234")
 	log.Fatalln(server.Serve(listener))
 }
