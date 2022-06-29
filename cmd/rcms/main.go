@@ -18,7 +18,7 @@ func main() {
 		panic(fmt.Errorf("invalid application configuration: %s", err))
 	}
 
-	fmt.Println(config.Config.ConfigVar)
+	fmt.Println(config.Config.CheckConfig)
 
 	log.Println("create router")
 	router := httprouter.New()
@@ -33,7 +33,7 @@ func main() {
 func start(router *httprouter.Router) {
 	log.Println("start application")
 
-	listener, err := net.Listen("tcp", ":1234")
+	listener, err := net.Listen("tcp", config.Config.Port)
 	if err != nil {
 		panic(err)
 	}

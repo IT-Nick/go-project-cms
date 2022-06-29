@@ -9,14 +9,15 @@ import (
 var Config appConfig
 
 type appConfig struct {
-	// Пример переменной, загружаемой в функции LoadConfig
-	ConfigVar string
+	CheckConfig string
+	BindIP      string
+	Port        string
 }
 
 // LoadConfig подгружает конфигурацию из файлов
 func LoadConfig(configPaths ...string) error {
 	v := viper.New()
-	v.SetConfigName("example")
+	v.SetConfigName("connection")
 	v.SetConfigType("yaml")
 	v.SetEnvPrefix("rcms")
 	v.AutomaticEnv()
