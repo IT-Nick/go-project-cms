@@ -162,15 +162,14 @@ func (h *handler) Register(router *httprouter.Router) {
 
 func (h *handler) GetUsersList(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
 	w.WriteHeader(200)
-	w.Write([]byte("this is list of users"))
-}
-
-func (h *handler) CreateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	w.WriteHeader(201)
 	if r.Method != http.MethodPost {
 		w.Write(LoginForm)
 		return
 	}
+}
+
+func (h *handler) CreateUser(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+	w.WriteHeader(201)
 }
 
 func (h *handler) GetUserByUUID(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
